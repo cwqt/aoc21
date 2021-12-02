@@ -18,3 +18,5 @@ export const timed =
 
     return result;
   };
+
+export type Fn<T, K> = (args: T) => K;
