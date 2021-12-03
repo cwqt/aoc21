@@ -3,9 +3,9 @@ import { Fn } from ".."
 export type Operation = [Direction, number]
 type Direction = "forward" | "down" | "up"
 
-const product = ([x, y]: number[]) => x * y
+export const product = ([x, y]: number[]) => x * y
 
-const pipe =
+export const pipe =
   <T, K, V>(f: (args: T) => K, g: (args: K) => V) =>
   (input: T) =>
     g(f(input))
