@@ -3,7 +3,7 @@ import { join } from "path"
 import { Operation, PartOne, PartTwo } from "."
 import { timed } from ".."
 
-describe("day 2", () => {
+describe("day 2: dive!", () => {
   const test: Operation[] = [
     ["forward", 5],
     ["down", 5],
@@ -23,15 +23,15 @@ describe("day 2", () => {
 
   it("should calculate the product of the x & y movements of the sub", () => {
     expect(PartOne(test)).toEqual(150)
-    const res = timed(PartOne)(input)
 
+    const res = timed(PartOne)(input)
     expect(res).toEqual(1714950)
   })
 
   it("should calculate the product again, but using aim", () => {
     expect(PartTwo(test)).toEqual(900)
-    const res = timed(PartTwo)(input)
 
+    const res = timed(PartTwo)(input)
     expect(res).toEqual(1281977850)
   })
 })

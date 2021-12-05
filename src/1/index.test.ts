@@ -3,7 +3,7 @@ import { join } from "path"
 import { timed } from ".."
 import { PartOne, PartTwo } from "."
 
-describe("day 1", () => {
+describe("day 1: sonar sweep", () => {
   const test: number[] = [
     199, 200, 208, 210, 200, 207, 240, 269, 260, 263,
   ]
@@ -14,17 +14,17 @@ describe("day 1", () => {
     .split("\n")
     .map(Number)
 
-  it("should tell me how many measurements were larger than the previous", () => {
+  it("part 1: how many measurements were larger than the previous", () => {
     expect(PartOne(test)).toEqual(7)
-    const res = timed(PartOne)(input)
 
+    const res = timed(PartOne)(input)
     expect(res).toEqual(1226)
   })
 
-  it("should do the same, but for a sliding window of length 3", () => {
+  it("part 2: same as part 1, but considering a sliding window of length 3", () => {
     expect(PartTwo(test)).toEqual(5)
-    const res = timed(PartTwo)(input)
 
+    const res = timed(PartTwo)(input)
     expect(res).toEqual(1252)
   })
 })

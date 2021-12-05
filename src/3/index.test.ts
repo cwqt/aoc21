@@ -3,7 +3,7 @@ import { join } from "path"
 import { PartOne, PartTwo } from "."
 import { timed } from ".."
 
-describe("day 3", () => {
+describe("day 3: binary diagnostics", () => {
   const test: number[][] = [
     [0, 0, 1, 0, 0],
     [1, 1, 1, 1, 0],
@@ -35,6 +35,7 @@ describe("day 3", () => {
 
   it("part 2: calculate the life support rating", () => {
     expect(PartTwo(test)).toEqual(230)
+
     const res = timed(PartTwo)(input)
     expect(res).toEqual(6775520)
   })
