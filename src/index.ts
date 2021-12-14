@@ -32,11 +32,24 @@ export const Y = <A extends any[], R>(
 const repeat =
   (n: number) =>
   (f: (i: number) => number) =>
-  (x: number): number => {
-    if (n > 0) return repeat(n - 1)(f)(f(x))
-    else return x
-  }
+  (x: number): number =>
+    n > 0 ? repeat(n - 1)(f)(f(x)) : x
 
 export const times =
   (n: number) => (f: (i: number) => void) =>
     repeat(n)(i => (f(i), i + 1))(0)
+
+/**
+ * Tuple<number, 3> == [number, number, number]
+ */
+export type Tuple<T, N extends number> = N extends N
+  ? number extends N
+    ? T[]
+    : _TupleOf<T, N, []>
+  : never
+
+type _TupleOf<
+  T,
+  N extends number,
+  R extends unknown[]
+> = R["length"] extends N ? R : _TupleOf<T, N, [T, ...R]>
