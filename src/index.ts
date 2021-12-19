@@ -21,6 +21,8 @@ export const timed =
 
 export type Fn<T, K> = (args: T) => K
 
+export const as = <T>(v: T) => v as T
+
 type M<A extends any[], R> = (f: M<A, R>) => (...a: A) => R
 export const Y = <A extends any[], R>(
   f: (g: (...a: A) => R) => (...a: A) => R
